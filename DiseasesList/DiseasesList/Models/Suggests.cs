@@ -6,7 +6,8 @@ namespace DiseasesList.Models
 {
    public class Suggests
     {
-        public string Name { get; set; }
-        public bool Porcent { get; set; }
+        public string Status { get; set; }
+        public List<List<string>> SuggestedSpecializations { get; set; }
+        // public bool Porcent { get; set; }
     }
 }

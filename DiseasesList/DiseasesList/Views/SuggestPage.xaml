@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiseasesList.Views.SuggestPage"
+             xmlns:viewModel ="clr-namespace:DiseasesList.ViewModels"
+             xmlns:services="clr-namespace:DiseasesList.Services">
+    <ContentPage.BindingContext>
+        <viewModel:SuggestViewModel>
+            <x:Arguments>
+                <services:MedicalApiService></services:MedicalApiService>
+            </x:Arguments>
+        </viewModel:SuggestViewModel>
+    </ContentPage.BindingContext>
+             
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="{Binding Value}"></Label>
+            <Button Text="Get Suggestions" Command="{Binding GetCommand}"></Button>
+            <Label Text="{Binding Value}"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

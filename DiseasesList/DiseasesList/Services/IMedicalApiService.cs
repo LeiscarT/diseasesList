@@ -8,7 +8,7 @@ namespace DiseasesList.Services
 {
     public interface IMedicalApiService
     {
-        Task<Suggests> GetSuggests();
+        Task<Suggests> GetSuggestsAsync();
 
     }
 }

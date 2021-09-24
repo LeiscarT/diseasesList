@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DiseasesList.Services;
+using DiseasesList.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +12,7 @@ namespace DiseasesList
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SuggestPage();
         }
 
         protected override void OnStart()
