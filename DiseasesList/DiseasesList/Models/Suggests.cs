@@ -8,6 +8,6 @@ namespace DiseasesList.Models
     {
         public string Status { get; set; }
         public List<List<string>> SuggestedSpecializations { get; set; }
-        // public bool Porcent { get; set; }
+       
     }
 }

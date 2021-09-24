@@ -12,7 +12,7 @@ namespace DiseasesList
         {
             InitializeComponent();
 
-            MainPage = new SuggestPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

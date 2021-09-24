@@ -11,15 +11,21 @@
             </x:Arguments>
         </viewModel:SuggestViewModel>
     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <CollectionView ItemsSource="{Binding Value}" SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="{Binding Name}"></Label>
-           
-            
-        </StackLayout>
+                    <Frame>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="10">
+                            <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                                <Label Text="Name of diagnostic" Grid.Column="0" Grid.Row="0" TextColor="Black"></Label>
+                                <Label Text="{Binding Name}" TextColor="Black" Grid.Column="1" Grid.Row="0" FontAttributes="Bold"></Label>
+                                <Label Text="Porcentange" Grid.Column="0" Grid.Row="1" TextColor="Black"></Label>
+                                <Label Text="{Binding Porcentage}" TextColor="Black" FontAttributes="Bold" Grid.Column="1" Grid.Row="1"></Label>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

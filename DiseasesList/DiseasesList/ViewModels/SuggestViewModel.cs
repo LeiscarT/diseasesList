@@ -17,9 +17,10 @@ namespace DiseasesList.ViewModels
 
         public ObservableCollection<SuggestResponse> Value { get; set; }
 
-
-        public string Name { get; set; }
-        public string Porcentage { get; set; }
+        private string _name;
+        public string Name { get { return _name; } set { _name = value; OnPropertyChanged(nameof(Name)); }}
+        private string _porcentage;
+        public string Porcentage { get { return _porcentage;} set { _porcentage = value; OnPropertyChanged(nameof(Porcentage)); } }
 
 
         public ICommand GetCommand { get; }
@@ -43,8 +44,8 @@ namespace DiseasesList.ViewModels
                 foreach (List<string> suggest in suggestsResponse.SuggestedSpecializations)
                 {
                     //  Value = string.Join(", ", suggest[0]);
-                    Name = suggest[0];
-                    Porcentage = suggest[1];
+                    _name = suggest[0];
+                    _porcentage = suggest[1];
                     Value.Add(new SuggestResponse(Name, Porcentage));
                     
                 }
