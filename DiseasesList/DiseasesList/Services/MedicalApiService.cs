@@ -10,11 +10,11 @@ namespace DiseasesList.Services
 {
     class MedicalApiService : IMedicalApiService
     {
-        private const string SessionId = "ID";
+        private const string SessionId = "MRFpEIQgL1nolXv9";
         public async Task<Suggests> GetSuggestsAsync()
         {
             HttpClient httpClient = new HttpClient();
-           var response = await httpClient.GetAsync("ID");
+           var response = await httpClient.GetAsync($"https://api.endlessmedical.com/v1/dx/GetSuggestedSpecializations?SessionID={SessionId}&NumberOfResults=10");
 
             if (response.IsSuccessStatusCode)
             {

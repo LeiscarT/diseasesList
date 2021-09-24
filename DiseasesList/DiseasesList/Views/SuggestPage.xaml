@@ -11,12 +11,17 @@
             </x:Arguments>
         </viewModel:SuggestViewModel>
     </ContentPage.BindingContext>
-             
     <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Value}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="{Binding Value}"></Label>
-            <Button Text="Get Suggestions" Command="{Binding GetCommand}"></Button>
-            <Label Text="{Binding Value}"></Label>
+            <Label Text="{Binding Name}"></Label>
+           
+            
         </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>
